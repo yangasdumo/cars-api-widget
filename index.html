@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" ></script>
+    <link rel="stylesheet" href="">
+    <title>Document</title>
+    <script type="text/x-tamplate" class="carTemplate"> 
+       {{#each carslist}} 
+       <table>
+           <td>{{make}}</td>
+           <td>{{color}}</td>
+           <td>{{model}}</td>
+        </table>
+        {{/each}}
+
+    </script>
+</head>
+
+<body>
+    <div class="cars"> </div>
+    <div class="colors"> </div>
+    <div class="model"> </div>
+  <script src="./cars-api.js"></script>  
+</body>
+</html>
