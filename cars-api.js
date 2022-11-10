@@ -1,7 +1,6 @@
 const cars = document.querySelector('.cars');
 const carTemplate = document.querySelector('.carTemplate');
 var car_Template = Handlebars.compile(carTemplate.innerHTML)
-
 const colors = document.querySelector('.colors');
 const makes = document.querySelector('.makes');
 
