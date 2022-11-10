@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 axios
-        .get(`http://api-tutor.herokuapp.com/v1/colors`)
+        .get(`https://api-tutor.herokuapp.com/v1/colors`)
         .then(result => {
             const thecolor = result.data;
             console.log(thecolor);
@@ -37,7 +37,7 @@ axios
 
 
 axios
-        .get(`http://api-tutor.herokuapp.com/v1/makes`)
+        .get(`https://api-tutor.herokuapp.com/v1/makes`)
         .then(result => {
             const make = result.data;
             console.log(make);
