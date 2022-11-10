@@ -30,7 +30,6 @@ axios
             let html = car_Template({
                 carslist: thecolor
             });
-
             colors.innerHTML = html;
           
 });
