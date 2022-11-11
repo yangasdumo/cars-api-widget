@@ -5,12 +5,10 @@ const colors = document.querySelector('.colors');
 const makes = document.querySelector('.makes');
 
 
-
-
 document.addEventListener("DOMContentLoaded", function () {
 
     axios
-        .get(`http://api-tutor.herokuapp.com/v1/cars`)
+        .get(`https://api-tutor.herokuapp.com/v1/cars`)
         .then(result => {
             const car = result.data;
             console.log(car);
@@ -18,10 +16,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 carslist: car
             });
             cars.innerHTML = html;
-          
-});
 
-axios
+        });
+
+    axios
         .get(`https://api-tutor.herokuapp.com/v1/colors`)
         .then(result => {
             const thecolor = result.data;
@@ -30,11 +28,11 @@ axios
                 carslist: thecolor
             });
             colors.innerHTML = html;
-          
-});
+
+        });
 
 
-axios
+    axios
         .get(`https://api-tutor.herokuapp.com/v1/makes`)
         .then(result => {
             const make = result.data;
@@ -42,8 +40,8 @@ axios
             let html = car_Template({
                 carslist: make
             });
-           colors.innerHTML = html;
-          
-});
+            colors.innerHTML = html;
+
+        });
 
 })
