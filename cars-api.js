@@ -16,6 +16,9 @@ const colors = document.querySelector('.colors');
 const model = document.querySelector('.model');
 const datafilter = document.querySelector('.filterColor');
 
+const colorslist = document.querySelector(".colors-list")
+const modelslist = document.querySelector(".models-list")
+
 
 document.addEventListener("DOMContentLoaded", function () {
     
@@ -34,10 +37,10 @@ document.addEventListener("DOMContentLoaded", function () {
         .get(`https://api-tutor.herokuapp.com/v1/colors`)
         .then(result => {
             const thecolor = result.data;
-            let html = car_Template({
-                carslist: thecolor
+            let html = colorTemplate({
+                colorlist: thecolor
             });
-            colors.innerHTML = html;
+            colorslist.innerHTML = html;
 
         });
 
@@ -46,10 +49,11 @@ document.addEventListener("DOMContentLoaded", function () {
         .get(`https://api-tutor.herokuapp.com/v1/makes`)
         .then(result => {
             const make = result.data;
-            let html = car_Template({
-                carslist: make
+            console.log(make)
+            let html = modelTemp({
+                modellist: make
             });
-            colors.innerHTML = html;
+            modelslist.innerHTML = html;
 
         });
 
