@@ -26,6 +26,7 @@
         <option value="White">White</option>
         <option value="Blue">Blue</option>
         <option value="Orange">Orange</option>
+        <option value="Grey">Grey</option>
     </select
     ></div>
         <div><br><br>
@@ -83,16 +84,14 @@
     </table>
     </head>
     <body>
-        <table>
-            <thead>
-                <tr>
-                    <th>make</th>
-                    <th>color</th>
-                    <th>model</th>
-                    <th>price</th>
-                    <th>reg_number</th>
-                </tr>
-            </thead>
+        <table id="customers">
+            <tr>
+              <th>make</th>
+              <th>color</th>
+              <th>model</th>
+              <th>price</th>
+              <th>reg_number</th>
+            </tr>
             <tbody class="cars">
 
             </tbody>
@@ -103,8 +102,6 @@
         <div class="models-list" style="padding-left: 40px;"></div>
     </div>
 
-        
-        <!-- <div class="filterColor"></div> -->
         <script src="./cars-api.js"></script>
     </body>
 

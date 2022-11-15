@@ -19,7 +19,7 @@ td {
     text-decoration: none;
     outline: none;
     color: #fff;
-    background-color: #141A46;
+    background-color: #2D788F;
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #999;
@@ -30,7 +30,28 @@ td {
 }
 
 .buttontype:active {
-    background-color: #141a46;
+    background-color: #2D788F;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
+
+
+#customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 90px;
+    
+  }
+  
+  #customers td, #customers th {
+    border: 5px solid #ddd;
+    padding: 8px;
+  }
+
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 20px;
+    text-align: left;
+    background-color: #2D788F;
+    color: white;
+  }
