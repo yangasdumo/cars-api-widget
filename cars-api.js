@@ -1,15 +1,12 @@
 const carTemplate = document.querySelector('.carTemplate');
 const colorTempplate = document.querySelector('.colorTemplate');
 const modelTempplate = document.querySelector('.modelTemplate');
-const modelFilter = document.querySelector('.FilterData');
-const colorFilter = document.querySelector('.FilterData');
 const button = document.querySelector('.buttontype');
 
 const themodel= document.querySelector('.model');
 const thecolor= document.querySelector('.color');
 
-var model_Filter = Handlebars.compile(modelFilter.innerHTML);
-var color_Filter = Handlebars.compile(colorFilter.innerHTML);
+
 var car_Template = Handlebars.compile(carTemplate.innerHTML);
 var colorTemplate = Handlebars.compile(colorTempplate.innerHTML);
 var modelTemp = Handlebars.compile(modelTempplate.innerHTML);
@@ -58,8 +55,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 });
-
-
 
 
 button.addEventListener("click", function () {
