@@ -1,17 +1,31 @@
-const cars = document.querySelector('.cars');
 const carTemplate = document.querySelector('.carTemplate');
-var car_Template = Handlebars.compile(carTemplate.innerHTML)
+const colorTempplate = document.querySelector('.colorTemplate');
+const modelTempplate = document.querySelector('.modelTemplate');
+const modelFilter = document.querySelector('.FilterData');
+const colorFilter = document.querySelector('.FilterData');
+const button = document.querySelector('.buttontype');
+
+const themodel= document.querySelector('.model');
+const thecolor= document.querySelector('.color');
+
+var model_Filter = Handlebars.compile(modelFilter.innerHTML);
+var color_Filter = Handlebars.compile(colorFilter.innerHTML);
+var car_Template = Handlebars.compile(carTemplate.innerHTML);
+var colorTemplate = Handlebars.compile(colorTempplate.innerHTML);
+var modelTemp = Handlebars.compile(modelTempplate.innerHTML);
+
+const cars = document.querySelector('.cars');
 const colors = document.querySelector('.colors');
-const makes = document.querySelector('.makes');
+const model = document.querySelector('.model');
+const datafilter = document.querySelector('.filterColor');
 
 
 document.addEventListener("DOMContentLoaded", function () {
-
+    
     axios
         .get(`https://api-tutor.herokuapp.com/v1/cars`)
         .then(result => {
             const car = result.data;
-            console.log(car);
             let html = car_Template({
                 carslist: car
             });
@@ -23,7 +37,6 @@ document.addEventListener("DOMContentLoaded", function () {
         .get(`https://api-tutor.herokuapp.com/v1/colors`)
         .then(result => {
             const thecolor = result.data;
-            console.log(thecolor);
             let html = car_Template({
                 carslist: thecolor
             });
@@ -36,7 +49,6 @@ document.addEventListener("DOMContentLoaded", function () {
         .get(`https://api-tutor.herokuapp.com/v1/makes`)
         .then(result => {
             const make = result.data;
-            console.log(make);
             let html = car_Template({
                 carslist: make
             });
@@ -44,4 +56,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
         });
 
-})
+
+});
+
+
+
+
+button.addEventListener("click", function () {
+    console.log(themodel.value,thecolor.value);
+    if (themodel && thecolor) {
+        axios
+            .get(`https://api-tutor.herokuapp.com/v1/cars/make/${themodel.value}/color/${thecolor.value}`)
+            .then(result => {
+                const model = result.data;
+                console.log(model);
+                let html = car_Template({
+                    carslist: model
+                });
+                cars.innerHTML = html;
+
+            });
+    }
+
+});

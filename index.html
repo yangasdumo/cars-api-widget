@@ -1,28 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" ></script>
-    <link rel="stylesheet" href="">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
     <title>Document</title>
-    <script type="text/x-tamplate" class="carTemplate"> 
+
+    <h1> Car API's App </h1>
+    <br>
+    <label for="cars">Choose a car:</label>
+    <select name="cars" class="model">
+        <option value="Nissan">Nissan</option>
+        <option value="Totoya">Totoya</option>
+        <option value="Volkswagen">Volkswagen</option>
+        <option value="Ford">Ford</option>
+    </select>
+
+    <label for="cars">Choose a color:</label>
+    <select name="cars" class="color">
+        <option value="Red">Red</option>
+        <option value="White">White</option>
+        <option value="Blue">Blue</option>
+        <option value="Orange">Orange</option>
+    </select>
+    <br><br>
+    <button class="buttontype" type="submit">submit</button>
+    <br>
+    <br>
+    <br>
+    <script type="text/x-tamplate" class="carTemplate">
        {{#each carslist}} 
-       <table></div>
+       <table>
            <td>{{make}}</td>
            <td>{{color}}</td>
            <td>{{model}}</td>
         </table>
         {{/each}}
     </script>
+    <script type="text/x-tamplate" class="colorTemplate">
+        <h2>Colors</h2>
+        {{#each colorlist}}
+            <li>
+            {{this}}
+            </li>
+        {{/each}}
+        </script>
+
+    <script type="text/x-tamplate" class="modelTemplate">
+        <h2>Model</h2>
+            {{#each modellist}}
+                <li>
+                {{thisl}}
+                </li>
+            {{/each}}
+            </script>
+
+    <script type="text/x-tamplate" class="FilterData">
+                {{#each filterlist}}
+                    <table>
+                    <td>{{color}}</td>
+                    <td>{{model}}</td>
+                </table>
+                {{/each}}
+                </script>
 </head>
 
-<body>
-    <div class="cars"> </div>
-    <div class="colors"> </div>
-    <div class="model"> </div>
-  <script src="./cars-api.js"></script>  
-</body>
+<body class="container">
+    <div>
+    </table>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>make</th>
+                    <th>color</th>
+                    <th>model</th>
+                </tr>
+            </thead>
+            <tbody class="cars">
+
+            </tbody>
+        </table>
+    </div>
+        <!-- <div class="colors"></div> -->
+        <!-- <div class="model"></div> -->
+        <!-- <div class="filterColor"></div> -->
+        <script src="./cars-api.js"></script>
+    </body>
+
 </html>

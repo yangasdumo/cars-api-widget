@@ -1,0 +1,37 @@
+table,
+th,
+td {
+    border: 1px solid;
+    padding: 20px
+}
+
+
+.container {
+    background-color: antiquewhite;
+    
+}
+
+.buttontype {
+    font-size: 17px;
+    display: inline-block;
+    padding: 15px 25px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #141A46;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+.buttontype:hover {
+    background-color: #2D788F
+}
+
+.buttontype:active {
+    background-color: #141a46;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
