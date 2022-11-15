@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="./style.css">
     <title>Document</title>
 
-    <h1> Car API's App </h1>
-    <br>
-    <label for="cars">Choose a car:</label>
+    <div style="display: flex;flex-direction:column;align-items: center;">
+        <div><h1> Car API's App </h1></div>
+        <div> <label for="cars">Choose a car:</label>
     <select name="cars" class="model">
         <option value="Nissan">Nissan</option>
         <option value="Totoya">Totoya</option>
@@ -26,12 +26,18 @@
         <option value="White">White</option>
         <option value="Blue">Blue</option>
         <option value="Orange">Orange</option>
-    </select>
-    <br><br>
+    </select
+    ></div>
+        <div><br><br>
     <button class="buttontype" type="submit">submit</button>
     <br>
+    <br></div>
+        
     <br>
-    <br>
+   
+    
+    <br></div>
+    
     <script type="text/x-tamplate" class="carTemplate">
        {{#each carslist}} 
        <table>
@@ -73,7 +79,7 @@
 </head>
 
 <body class="container">
-    <div>
+    <div style="display: flex;justify-content: center;">
     </table>
     </head>
     <body>
